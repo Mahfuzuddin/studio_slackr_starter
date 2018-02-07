@@ -19,28 +19,28 @@ export default class MessageInput extends React.Component {
     });
   }
   sendMessage(event) {
-    // var self = this; // This will be needed later.
+     var self = this;
     event.preventDefault();
-    if(!this.state.message) {
+    if(!self.state.message) {
       return;
     }
     base.push('channels/' + this.props.channelId + '/messages', {
       data: {
         author: this.user.displayName,
-        contents: 'TODO replace this string with the message input text',
+        contents: this.state.message,
         timestamp: Date.now(),
       },
       then: function(err) {
         if(err) {
           console.error('Error saving message', err);
         } else {
-          // TODO reset the message input to empty.
+          self.setState({message: ''});
         }
       }
     });
   }
   handleChange(event) {
-    // TODO set the state message property to event.target.value
+  this.setState({message: event.target.value})
   }
   render() {
     return (

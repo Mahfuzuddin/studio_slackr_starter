@@ -73,3 +73,4 @@ Finally the code behind the `npm start` command comes from
 [create-react-app](https://github.com/facebookincubator/create-react-app#create-react-app-).
 It also makes `npm run build` available which you will later use to publish your
 slackr project.
+# slackrr
